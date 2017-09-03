@@ -52,20 +52,20 @@ public class FragmentMenuItem extends BaseFragment {
         ((TextView) view.findViewById(R.id.text)).setText(getTag());
         switch (getTag()) {
             case TAG1:
-//                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
-//                        false, FragmentMenuItem.TAG1_child1);
+                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
+                        false, FragmentMenuItem.TAG1_child1);
                 break;
             case TAG2:
-//                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
-//                        false, FragmentMenuItem.TAG2_child1);
+                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
+                        false, FragmentMenuItem.TAG2_child1);
                 break;
             case TAG3:
-//                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
-//                        false, FragmentMenuItem.TAG3_child1);
+                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
+                        false, FragmentMenuItem.TAG3_child1);
                 break;
             case TAG4:
-//                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
-//                        false, FragmentMenuItem.TAG4_child1);
+                replaceChildFragment(FragmentMenuItem.newInstance(), R.id.frame_child,
+                        false, FragmentMenuItem.TAG4_child1);
                 break;
         }
     }

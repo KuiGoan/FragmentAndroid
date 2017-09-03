@@ -11,24 +11,6 @@ import android.util.Log;
 
 public class BaseFragment extends Fragment {
 
-    protected void replaceFragment(Fragment fm, boolean isAddBackstack, String tag) {
-//        FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-//        transaction.replace(R.id.frame_content, fm, tag);
-//        transaction.commit();
-        FragmentManager manager = getActivity().getSupportFragmentManager();
-//        boolean fragmentPopped = manager.popBackStackImmediate (tag, 0);
-        Fragment fragment = manager.findFragmentByTag(tag);
-        if (fragment == null){ //fragment not in back stack, create it.
-            FragmentTransaction ft = manager.beginTransaction();
-            ft.replace(R.id.frame_content, fm, tag);
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
-            if (isAddBackstack) {
-                ft.addToBackStack(tag);
-            }
-            ft.commit();
-        }
-    }
-
     protected void replaceChildFragment(Fragment fm, int viewId, boolean isAddBackstack, String tag) {
         //add child fragment
 //        getChildFragmentManager()
