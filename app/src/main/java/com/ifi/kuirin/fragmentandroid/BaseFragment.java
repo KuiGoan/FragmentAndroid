@@ -37,7 +37,7 @@ public class BaseFragment extends Fragment {
 //                .commit();
         FragmentManager fragmentManager = getChildFragmentManager();
 //        fragmentManager.popBackStack();
-        if (!fragmentManager.popBackStackImmediate(tag, 0)) {
+        if (!fragmentManager.popBackStackImmediate(tag, 0) && fragmentManager.findFragmentByTag(tag) == null) {
 //            Log.d("backstack: " , " "+ fragmentManager.getBackStackEntryCount());
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.add(viewId, fm, tag);

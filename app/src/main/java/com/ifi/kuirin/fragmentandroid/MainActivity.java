@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.item_1:
 //                viewPager.setCurrentItem(0);
-                CustomFragmentManager.getInstance(this).replaceFragment(R.id.frame_content1,
+                CustomFragmentManager.getInstance(this). replaceFragment(R.id.frame_content1,
                         FragmentMenu.newInstance(0), FragmentMenuItem.TAG1);
                 break;
             case R.id.item_2:
@@ -67,7 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //           super.onBackPressed();
 //        }
 
-        super.onBackPressed();
         if (!CustomFragmentManager.getInstance(this).returnBackStackImmediate(getSupportFragmentManager())) {
             super.onBackPressed();
         }

@@ -50,7 +50,7 @@ public class CustomFragmentManager {
 
     public void replaceFragment(int layoutId, @NonNull Fragment fragment, @NonNull String tag) {
         FragmentManager fragmentManager = getFragmentManager();
-        if (!fragmentManager.popBackStackImmediate(tag, 0)) {
+        if (!fragmentManager.popBackStackImmediate(tag, 0) && fragmentManager.findFragmentByTag(tag) == null) {
 //            Log.d("replaceChildFragment: " , " "+ fragmentManager.getBackStackEntryCount());
             FragmentTransaction ft = fragmentManager.beginTransaction();
             ft.replace(layoutId, fragment, tag);
@@ -107,7 +107,7 @@ public class CustomFragmentManager {
         if (fragments != null && fragments.size() > 0) {
             for (Fragment fragment : fragments) {
                 if (fragment != null && fragment.getChildFragmentManager() != null) {
-                    if (fragment.getChildFragmentManager().getBackStackEntryCount() > 0) {
+                    if (fragment.getChildFragmentManager().getBackStackEntryCount() > 1) {
                         if (fragment.getChildFragmentManager().popBackStackImmediate()) {
                             return true;
                         } else {
